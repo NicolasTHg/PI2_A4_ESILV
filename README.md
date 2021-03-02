@@ -8,7 +8,7 @@ source env/bin/activate
 
 ### Install modules - SQLite Database
 pip3 install -r requirements.txt
-# OR with PostgreSQL connector
+### OR with PostgreSQL connector
 pip install -r requirements-pgsql.txt
 
 ### Set the FLASK_APP environment variable
