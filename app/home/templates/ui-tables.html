@@ -1,0 +1,524 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Clients {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+        <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Connaissance Client</h4>
+                  <p class="card-category"> Profil de vos clients</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Nom
+                        </th>
+                        <th>
+                          Prénom
+                        </th>
+                        <th>
+                          Age
+                        </th>
+                        <th>
+                          Sexe
+                        </th>
+                        <th>
+                          Pays
+                        </th>
+                        <th>
+                          Ville
+                        </th>
+                        <th>
+                          Profession
+                        </th>
+                        <th>
+                          Revenu
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            1
+                          </td>
+                          <td>
+                            GARCIA
+                          </td>
+                          <td>
+                            Camille
+                          </td>
+                          <td>
+                            27
+                          </td>
+                          <td>
+                            F
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Toulouse (31500)
+                          </td>
+                          <td>
+                            Chocolatier
+                          </td>
+                          <td class="text-primary">
+                            25,300€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            2
+                          </td>
+                          <td>
+                            MARTIN
+                          </td>
+                          <td>
+                            Hugo
+                          </td>
+                          <td>
+                            23
+                          </td>
+                          <td>
+                            H
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Metz (57463)
+                          </td>
+                          <td>
+                            Menuisier
+                          </td>
+                          <td class="text-primary">
+                            27,200€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            3
+                          </td>
+                          <td>
+                            SABATIER
+                          </td>
+                          <td>
+                            Patrick
+                          </td>
+                          <td>
+                            46
+                          </td>
+                          <td>
+                            H
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Lilles (59350)
+                          </td>
+                          <td>
+                            Fabricant de meubles
+                          </td>
+                          <td class="text-primary">
+                            20,700€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            4
+                          </td>
+                          <td>
+                            SLIMANI
+                          </td>
+                          <td>
+                            Inès
+                          </td>
+                          <td>
+                            30
+                          </td>
+                          <td>
+                            F
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Brest (29010)
+                          </td>
+                          <td>
+                            Constructeur de maisons
+                          </td>
+                          <td class="text-primary">
+                            27,900€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            5
+                          </td>
+                          <td>
+                            LIMA
+                          </td>
+                          <td>
+                            Ana
+                          </td>
+                          <td>
+                            25
+                          </td>
+                          <td>
+                            F
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Marseille (13055)
+                          </td>
+                          <td>
+                            Plombier
+                          </td>
+                          <td class="text-primary">
+                            28,100€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            6
+                          </td>
+                          <td>
+                            DUBOIS
+                          </td>
+                          <td>
+                            Gauthier
+                          </td>
+                          <td>
+                            35
+                          </td>
+                          <td>
+                            H
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Limoges (87085)
+                          </td>
+                          <td>
+                            Travail du bois
+                          </td>
+                          <td class="text-primary">
+                            26,900€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            7
+                          </td>
+                          <td>
+                            LEE
+                          </td>
+                          <td>
+                            Julie
+                          </td>
+                          <td>
+                            32
+                          </td>
+                          <td>
+                            F
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Torcy (77200)
+                          </td>
+                          <td>
+                            Bijoutier
+                          </td>
+                          <td class="text-primary">
+                            32,900€
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            8
+                          </td>
+                          <td>
+                            STRAUSS
+                          </td>
+                          <td>
+                            Marc
+                          </td>
+                          <td>
+                            42
+                          </td>
+                          <td>
+                            H
+                          </td>
+                          <td>
+                            FRANCE
+                          </td>
+                          <td>
+                            Amiens (80021)
+                          </td>
+                          <td>
+                            Charcutier
+                          </td>
+                          <td class="text-primary">
+                            30,600€
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--<div class="col-md-12">
+              <div class="card card-plain">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title mt-0"> Connaissance Entreprise</h4>
+                  <p class="card-category"> Here is a subtitle for this table</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table table-hover">
+                      <thead class="">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Name
+                        </th>
+                        <th>
+                          Country
+                        </th>
+                        <th>
+                          City
+                        </th>
+                        <th>
+                          Salary
+                        </th>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            1
+                          </td>
+                          <td>
+                            Dakota Rice
+                          </td>
+                          <td>
+                            Niger
+                          </td>
+                          <td>
+                            Oud-Turnhout
+                          </td>
+                          <td>
+                            $36,738
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            2
+                          </td>
+                          <td>
+                            Minerva Hooper
+                          </td>
+                          <td>
+                            Curaçao
+                          </td>
+                          <td>
+                            Sinaai-Waas
+                          </td>
+                          <td>
+                            $23,789
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            3
+                          </td>
+                          <td>
+                            Sage Rodriguez
+                          </td>
+                          <td>
+                            Netherlands
+                          </td>
+                          <td>
+                            Baileux
+                          </td>
+                          <td>
+                            $56,142
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            4
+                          </td>
+                          <td>
+                            Philip Chaney
+                          </td>
+                          <td>
+                            Korea, South
+                          </td>
+                          <td>
+                            Overland Park
+                          </td>
+                          <td>
+                            $38,735
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            5
+                          </td>
+                          <td>
+                            Doris Greene
+                          </td>
+                          <td>
+                            Malawi
+                          </td>
+                          <td>
+                            Feldkirchen in Kärnten
+                          </td>
+                          <td>
+                            $63,542
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            6
+                          </td>
+                          <td>
+                            Mason Porter
+                          </td>
+                          <td>
+                            Chile
+                          </td>
+                          <td>
+                            Gloucester
+                          </td>
+                          <td>
+                            $78,615
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>-->
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Ajouter un Client</h4>
+                <p class="card-category">Compléter son profil</p>
+              </div>
+              <div class="card-body">
+                <form>
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">ID Client</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Prénom</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Nom</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Adresse email</label>
+                        <input type="email" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Adresse</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Ville</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Pays</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Code Postal</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Profession</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Revenu</label>
+                        <input type="text" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label>À propos</label>
+                        <div class="form-group">
+                          <label class="bmd-label-floating"> </label>
+                          <textarea class="form-control" rows="3"></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary pull-right">Ajouter</button>
+                  <div class="clearfix"></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
