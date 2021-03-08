@@ -1,0 +1,180 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Agenda {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+  <link rel="stylesheet" href="static/assets/calendar/calendarjs.css" />
+  <script src="static/assets/calendar/calendarjs.js"></script>
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="card card-plain">
+      <div class="card-header card-header-primary">
+        <h4 class="card-title">Calendrier</h4>
+        <p class="card-category">
+          <a target="_blank" href="https://www.yellow.mu/fr/index.html"></a>
+        </p>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card-body">
+            <button onclick="calendarInstance.moveToPreviousMonth();">Previous Month</button>
+            <button onclick="calendarInstance.moveToNextMonth();">Next Month</button>
+            <button onclick="removeEvent();">Remove Event</button>
+            <button onclick="calendarInstance.clearEvents();">Clear Events</button>
+            <br />
+            <br />
+            <div id="myCalendar" style="max-width: 800px;">
+              <p>Some data that should be cleared.</p>
+            </div>
+            <br />
+            <br />
+            <!--<button onclick="calendarInstance.exportAllEvents( 'csv' );">Export All Events (csv)</button>
+            <button onclick="calendarInstance.exportAllEvents( 'xml' );">Export All Events (xml)</button>
+            <button onclick="calendarInstance.exportAllEvents( 'json' );">Export All Events (json)</button>
+            <button onclick="calendarInstance.exportAllEvents( 'text' );">Export All Events (text)</button>-->
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+  // calendarJs(id, options, startDateTime)
+  /*var calendarInstance = new calendarJs( "myCalendar", {
+    exportEventsEnabled: true,
+    manualEditingEnabled: true,
+    showTimesInMainCalendarEvents: false,
+    minimumDayHeight: 0
+  });
+
+  var events = [
+      {
+        from: previousDay,
+        to: previousDay,
+        title: "Previous Day",
+        description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+        location: "Teams Meeting",
+        isAllDayEvent: true,
+        color: "#FF0000",
+        colorText: "#FFFF00",
+        colorBorder: "#00FF00"
+      },
+    // more events here
+    ];
+
+  calendarInstance.addEvents(events);*/
+
+  var calendarInstance = new calendarJs( "myCalendar", {
+                exportEventsEnabled: true,
+                manualEditingEnabled: true,
+                showTimesInMainCalendarEvents: false,
+                minimumDayHeight: 0
+            } ),
+            previousDay = new Date(),
+            today9 = new Date(),
+            today11 = new Date(),
+            tomorrow = new Date(),
+            firstDayInNextMonth = new Date(),
+            lastDayInNextMonth = new Date(),
+            today = new Date(),
+            today3HoursAhead = new Date();
+
+        previousDay.setDate( previousDay.getDate() - 1 );
+        today11.setHours( 11 );
+        tomorrow.setDate( today11.getDate() + 1 );
+        today9.setHours( 9 );
+
+        firstDayInNextMonth.setDate( 1 );
+        firstDayInNextMonth.setDate( firstDayInNextMonth.getDate() + daysInMonth( firstDayInNextMonth.getFullYear(), firstDayInNextMonth.getMonth() ) );
+
+        lastDayInNextMonth.setDate( 1 );
+        lastDayInNextMonth.setMonth( lastDayInNextMonth.getMonth() + 1 );
+        lastDayInNextMonth.setDate( lastDayInNextMonth.getDate() + daysInMonth( lastDayInNextMonth.getFullYear(), lastDayInNextMonth.getMonth() ) - 1 );
+
+        today.setHours( 0, 0, 0, 0 );
+        today.setDate( today.getDate() + 3 );
+        today3HoursAhead.setHours( 3, 0, 0, 0 );
+        today3HoursAhead.setDate( today3HoursAhead.getDate() + 3 );
+
+        var events = [
+            {
+                from: previousDay,
+                to: previousDay,
+                title: "Previous Day",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+                location: "Teams Meeting",
+                isAllDayEvent: true,
+                color: "#FF0000",
+                colorText: "#FFFF00",
+                colorBorder: "#00FF00"
+            },
+            {
+                from: today11,
+                to: tomorrow,
+                title: "Title 1",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+                location: "Teams Meeting",
+                isAllDayEvent: false
+            },
+            {
+                from: tomorrow,
+                to: today11,
+                title: "Title Bad (should not show)",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+                location: "Teams Meeting",
+                isAllDayEvent: false
+            },
+            {
+                from: today9,
+                to: today9,
+                title: "Title 2",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+                location: "Teams Meeting",
+                isAllDayEvent: true
+            },
+            {
+                from: firstDayInNextMonth,
+                to: firstDayInNextMonth,
+                title: "First Day",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+                location: "Teams Meeting",
+                isAllDayEvent: true,
+                color: "#00FF00",
+                colorText: "#FF0000",
+            },
+            {
+                from: lastDayInNextMonth,
+                to: lastDayInNextMonth,
+                title: "Last Day",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog.",
+                location: "Teams Meeting",
+                isAllDayEvent: true,
+                color: "#0000FF",
+            },
+            {
+                from: today,
+                to: today3HoursAhead,
+                title: "Regular Event",
+                description: "This is a another description of the event that has been added, so it can be shown in the pop-up dialog."
+            }
+        ];
+
+        calendarInstance.addEvents( events );
+
+        function removeEvent() {
+            calendarInstance.removeEvent( new Date(), "Test Title 2" );
+        }
+
+        function daysInMonth( year, month ) {
+            return new Date( year, month + 1, 0 ).getDate();
+        }
+
+  </script>
+{% endblock javascripts %}
